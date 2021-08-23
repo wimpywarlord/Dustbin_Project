@@ -29,7 +29,26 @@ app.use(express.static(__dirname+'/public'));
 
 // DATA ENTRY
 app.get("/", function (req, res) {
+    res.render("page-login.ejs");
+    // CODE HERE FOR AUTHENTICATION
+})
+
+app.post("/homepageauth", function (req, res) {
+    if (condition) {
+            // CODE HERE FOR AUTHENTICATION
+    } else {
+        
+    }
+})
+
+// HOME PAGE
+app.get("/home", function (req, res) {
     res.render("index.ejs");
+})
+
+// PROFILE PAGE
+app.get("/app-profile", function (req, res) {
+    res.render("app-profile.ejs");
 })
 
 
