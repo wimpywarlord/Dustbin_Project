@@ -46,6 +46,12 @@ app.get("/index", function (req, res) {
     res.render("index.ejs");
 })
 
+// GRAPH
+app.get("/analytics", function (req, res) {
+    res.render("index2.ejs");
+})
+
+
 // PROFILE PAGE
 app.get("/app-profile", function (req, res) {
     res.render("app-profile.ejs");
