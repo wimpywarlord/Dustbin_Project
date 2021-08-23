@@ -42,7 +42,7 @@ app.post("/homepageauth", function (req, res) {
 })
 
 // HOME PAGE
-app.get("/home", function (req, res) {
+app.get("/index", function (req, res) {
     res.render("index.ejs");
 })
 
