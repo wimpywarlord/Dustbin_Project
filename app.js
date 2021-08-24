@@ -57,6 +57,10 @@ app.get("/app-profile", function (req, res) {
     res.render("app-profile.ejs");
 })
 
+// PROFILE PAGE
+app.get("/test", function (req, res) {
+    res.render("test.ejs");
+})
 
 app.listen(process.env.PORT || 3000, function () {
     console.log("SERVER 3000 HAS STARTED");
