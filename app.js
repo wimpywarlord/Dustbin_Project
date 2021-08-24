@@ -1,8 +1,10 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var ofirebase = require("./firebase/setData");
 // var mongoose = require("mongoose");
 
 var app = express();
+app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname+'/public'));
 
@@ -60,6 +62,14 @@ app.get("/app-profile", function (req, res) {
 // PROFILE PAGE
 app.get("/test", function (req, res) {
     res.render("test.ejs");
+})
+
+// FIRE BASE TESTING 
+app.post("/savedata/",function (req,res) {
+    ofirebase.saveData(req.body, function (err, data) {
+        // WE NEED TO RETURN THE RESULT TO WEB PAGE
+        res.send(data);
+    });
 })
 
 app.listen(process.env.PORT || 3000, function () {
